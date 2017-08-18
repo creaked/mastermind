@@ -15,9 +15,7 @@ class Game
     puts "Mastermind Game"
     puts "When prompted enter 4 colors in the order you would like to guess them with a space between each color"
     puts "Ex: red green yellow blue\n\n"
-    puts "If guess color is correct but position is not color will be white otherwise if it is the correct color and position color will be color\n\n"
-  
-    puts "You are able to chose from the following colors"
+    puts "You are able to chose from the following colors:"
     $colors.each { |color| print Rainbow(color).color(color) + " "}
     puts "\n\n"
   end
@@ -41,12 +39,15 @@ class Game
     correct_color?(@guess)
     correct?(@guess)
     
-    puts "\nCorrect colors: #{@correct_colors.join(" ")}"
-    puts "Correct: #{@correct.join(" ")}" 
-    puts "\n"
-    #puts "You are able to chose from the following colors"
-    #$colors.each { |color| print Rainbow(color).color(color) + " "}
-    #puts "\n"
+    puts "\nCorrect colors:"
+    @correct_colors.each { |color| print Rainbow(color).color(color.to_sym) + " "}
+    puts "\nCorrect color and position:"
+    @correct.each { |color| print Rainbow(color).color(color.to_sym) + " "}
+    puts "\n\n"
+    
+    puts "Remember you are able to chose from the following colors:"
+    $colors.each { |color| print Rainbow(color).color(color) + " "}
+    puts "\n\n"
     
     @guess_count += 1
   end

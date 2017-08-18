@@ -14,6 +14,6 @@ class Board
   # Draw winning gameboard on screen
   def draw
     $code.each { |color| print "[ #{Rainbow("o").background(color)} ] " }
-    puts "\n"
+    puts "\n\n"
   end
 end
