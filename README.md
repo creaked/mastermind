@@ -1,6 +1,22 @@
 ## Mastermind
 
+![Alt text](https://image.ibb.co/fsNLbk/Screen_Shot_2017_08_18_at_6_50_19_PM.png "Game Screen Shot")
+
 If you've never played Mastermind, a game where you have to guess your opponent's secret code within a certain number of turns (like hangman with colored pegs), check it out on <a href="http://en.wikipedia.org/wiki/Mastermind_(board_game)">Wikipedia</a>.  Each turn you get some feedback about how good your guess was -- whether it was exactly correct or just the correct color but in the wrong space.
+
+### How to play:
+1. ``$ git clone https://github.com/creaked/mastermind.git``
+2. ``$ cd mastermind``
+3. ``$ bundle install``
+4. ``$ ruby bin/mastermind.rb``
+
+### TODO:
+1. Implement codemaker
+2. Add AI
+3. Add rspec tests
+4. Refactor
+
+***
 
 ### Your Task
 
