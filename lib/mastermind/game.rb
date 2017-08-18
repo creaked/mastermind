@@ -16,7 +16,7 @@ class Game
     puts "When prompted enter 4 colors in the order you would like to guess them with a space between each color"
     puts "Ex: red green yellow blue\n\n"
     puts "You are able to chose from the following colors:"
-    $colors.each { |color| print Rainbow(color).color(color) + " "}
+    $colors.each { |color| print Rainbow(color).color(color) + " " }
     puts "\n\n"
   end
   
@@ -35,15 +35,16 @@ class Game
     puts "Please enter 4 colors:"
     guess = gets.chomp.downcase
     @guess = guess.to_s.split(/\s/)
-    #verify_guess
+    verify_guess(@guess)
     correct_color?(@guess)
     correct?(@guess)
     
     puts "\nCorrect colors:"
     @correct_colors.each { |color| print Rainbow(color).color(color.to_sym) + " "}
+    
     puts "\nCorrect color and position:"
     @correct.each { |color| print Rainbow(color).color(color.to_sym) + " "}
-    puts "\n\n"
+    puts "\n\n" # using new lines to seperate output
     
     puts "Remember you are able to chose from the following colors:"
     $colors.each { |color| print Rainbow(color).color(color) + " "}
@@ -53,8 +54,12 @@ class Game
   end
   
   # Checks if each guess is in $colors
-  # Checks if @guess array is longer then 4 elements
-  def verify_guess
+  # Checks if array is longer then 4 elements
+  def verify_guess(array)
+    unless array.all?{|x| $colors_strings.include?(x)} && array.count == 4
+      puts "\nInvalid guess"
+      guess
+    end
   end
   
   # Checks if guess color is in $code array

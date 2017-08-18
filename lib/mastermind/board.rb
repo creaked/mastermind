@@ -2,6 +2,7 @@ class Board
   def initialize
     $guess = Array.new
     $colors = [:red, :green, :yellow, :blue, :magenta, :cyan, :orange, :brown] 
+    $colors_strings = $colors.map { |x| x.to_s }
     $code = $colors.sample(4)
     $code_strings = $code.map { |x| x.to_s }
   end
